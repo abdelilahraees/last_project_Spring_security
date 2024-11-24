@@ -2,40 +2,29 @@ package app.Security;
 
 import java.util.Collection;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
+@Data
+@AllArgsConstructor
 public class CustomUserDetails implements UserDetails {
 
     private String username;
+    private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
-    @Getter
     private String fullname;
 
-    public CustomUserDetails(String username, String password, Collection<? extends GrantedAuthority> authorities,
-                             String fullname) {
-        this.username = username;
-        this.password = password;
-        this.authorities = authorities;
-        this.fullname = fullname;
-    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
     }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
 
-    @Override
-    public String getUsername() {
-        return username;
-    }
 
     @Override
     public boolean isAccountNonExpired() {

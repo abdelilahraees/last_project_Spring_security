@@ -87,16 +87,18 @@
 
     <h2>Registration</h2>
     <form th:action="@{/register}" method="post" role="form" th:object="${user}">
-        <label for="fullname">FullName:</label>
-        <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter your FullName"
+        <label for="fullname">FirstName:</label>
+        <input th:field="*{firstname}" type="text" id="fullname" name="fullname" placeholder="Enter your FullName"
                required>
 
-        <label for="username">Username:</label>
-        <input th:field="*{username}" type="text" id="username" name="username" placeholder="Enter your Username"
+        <label for="username">LastName:</label>
+        <input th:field="*{lasttname}" type="text" id="username" name="username" placeholder="Enter your Username"
+               required> <label for="username">Email:</label>
+        <input th:field="*{email}" type="text" id="email" name="username" placeholder="Enter your Username"
                required>
 
         <label for="password">Password:</label>
-        <input th:field="*{password}" type="password" id="password" name="password"
+        <input th:field="*{pw}" type="password" id="password" name="password"
                placeholder="Enter your Password" required>
 
         <button type="submit">Register</button>
@@ -105,7 +107,7 @@
         <span th:if="${Userexist}" style="color: red;">Username is Taken</span>
     </div>
     <div>
-        <span class="form-footer">Already have an account? <a th:href="@{/login1}">Login</a>here.</span>
+        <span class="form-footer">Already have an account? <a th:href="@{/login}">Login</a>here.</span>
     </div>
 </div>
 </body>

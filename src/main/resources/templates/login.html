@@ -86,7 +86,11 @@
                 <p>Invalid Username or Password</p>
             </div>
         </div>
-
+        <div th:if="${success}">
+            <div class="success-message">
+                <p>Registration Successful!</p>
+            </div>
+        </div>
         <div th:if="${param.logout}">
             <div class="logout-message">
                 <p>Logout Successful!</p>

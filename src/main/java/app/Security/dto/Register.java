@@ -7,17 +7,8 @@ import lombok.Setter;
 @Setter
 public class Register {
     private String name;
+    private String firstname;
+    private String lasttname;
     private String email;
     private String pw;
-    private float price;
-
-    @Override
-    public String toString() {
-        return "Register{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", pw='" + pw + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }
